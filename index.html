@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Thing For You — Biya 🌷</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<div id="musicPanel" class="music-panel">
+  <button id="musicToggle" class="music-toggle" aria-label="Putar atau jeda musik">♫</button>
+  <div class="music-info">
+    <strong>Cinta in My Heart</strong>
+    <small>Ikyy Pahlevii · Slow Remix</small>
+    <div class="progress-row">
+      <span>🔊</span><input id="volume" type="range" min="0" max="1" step="0.01" value=".45">
+      <span id="volText">45%</span>
+    </div>
+    <div id="lyrics" class="lyrics karaoke" aria-label="Lirik lagu">Instrumen</div>
+  </div>
+</div>
+
+<audio id="audio" preload="auto">
+  <source src="assets/cinta-in-my-heart.mp3" type="audio/mpeg">
+</audio>
+
+<main id="app">
+  <section class="scene active" data-scene="1">
+    <div class="card hero">
+      <div class="eyebrow">🌷 A Little Thing For You</div>
+      <h1>Welcome Biya!! 🎉</h1>
+      <p>Haiii.</p>
+      <p>Selamat datang di website kecil yang sengaja aku buat khusus buat kamu. 🤍</p>
+      <button class="primary start">Buka Surat Ini</button>
+    </div>
+  </section>
+
+  <section class="scene" data-scene="2"><div class="card"><div class="eyebrow">01 · Sebelum mulai</div><h2>Sebelum mulai...</h2><p>Aku minta satu janji kecil ya.</p><p>Jangan buru-buru ditutup dulu.</p><button class="primary next">Lanjutkan</button></div></section>
+  <section class="scene" data-scene="3"><div class="card"><div class="eyebrow">02 · Dua menit</div><h2>Dua menit aja.</h2><p>Aku cuma mau pinjam waktu sekitar dua menit aja.</p><p>Tenang kok...</p><p>Nggak ada jumpscare.<br>Nggak ada soal matematika juga. 😭</p><button class="primary next">Lanjutkan</button></div></section>
+  <section class="scene" data-scene="4"><div class="card"><div class="eyebrow">03 · Random</div><h2>Mungkin ini agak random.</h2><p>Soalnya kita juga baru kenal.</p><p>Tapi aku kepikiran bikin sesuatu yang beda daripada cuma chat biasa.</p><button class="primary next">Lanjutkan</button></div></section>
+  <section class="scene" data-scene="5"><div class="card"><div class="eyebrow">04 · Tempat kecil</div><h2>Tempat kecil.</h2><p>Daripada semua cuma jadi chat...</p><p>Kenapa nggak bikin tempat kecil yang isinya cuma buat kamu?</p><p>Jadi... mulai ya? 🌷</p><button class="primary next">Mulai</button></div></section>
+
+  <section class="scene" data-scene="6"><div class="card"><div class="eyebrow">05 · Kenalan</div><h2>Boleh lanjut sampai akhir nggak?</h2><div class="choices"><button class="choice next">🤍 Iya.</button><button class="choice next">😳 Oke, penasaran.</button></div></div></section>
+  <section class="scene" data-scene="7"><div class="card"><div class="eyebrow">06 · Pengantar</div><h2>Makasih ya udah lanjut.</h2><p>Berarti sekarang aku boleh tanya beberapa hal kecil.</p><p>Jawab sejujurnya aja, nggak ada jawaban yang salah kok.</p><button class="primary next">Lanjutkan</button></div></section>
+
+  <section class="scene" data-scene="8"><div class="card"><div class="eyebrow">07 · First impression</div><h2>First impression kamu ke aku apa?</h2><textarea data-key="first_impression" placeholder="Tulis jawaban kamu di sini..."></textarea><button class="primary save-next">Kirim Jawaban</button></div></section>
+  <section class="scene" data-scene="9"><div class="card"><div class="eyebrow">08 · Jujur</div><h2>Deg-degan dikit. 😭</h2><p>Jujur ya...</p><p>Aku agak deg-degan bikin ini.</p><p>Takut kamu malah ngerasa aneh. 😭</p><button class="primary next">Lanjutkan</button></div></section>
+
+  <section class="scene" data-scene="10"><div class="card"><div class="eyebrow">09 · Cara ngobrol</div><h2>Kalau kita lagi ngobrol, kamu lebih suka...</h2><div class="choices column">
+    <button class="choice save-choice" data-key="chat_style" data-value="Chat panjang">💬 Chat panjang</button>
+    <button class="choice save-choice" data-key="chat_style" data-value="Chat singkat tapi sering">😊 Chat singkat tapi sering</button>
+    <button class="choice save-choice" data-key="chat_style" data-value="Voice call">📞 Voice call</button>
+    <button class="choice save-choice" data-key="chat_style" data-value="Ketemu langsung">🤍 Ketemu langsung <span>(kalau suatu saat)</span></button>
+    <button class="choice other-btn" data-target="other-chat">✍️ Lainnya...</button>
+  </div><div id="other-chat" class="other"><input data-key="chat_style_other" placeholder="Tulis jawaban lain..."><button class="small save-next">Simpan</button></div></div></section>
+
+  <section class="scene" data-scene="11"><div class="card"><div class="eyebrow">10 · Santai dulu</div><h2>Oke...</h2><p>Sekarang pertanyaannya yang lebih santai.</p><button class="primary next">Lanjutkan</button></div></section>
+
+  <section class="scene" data-scene="12"><div class="card"><div class="eyebrow">11 · Kalau jalan</div><h2>Kalau diajak jalan, kamu pilih yang mana?</h2><div class="choices grid">
+    <button class="choice save-choice" data-key="hangout" data-value="Pantai">🌊 Pantai</button>
+    <button class="choice save-choice" data-key="hangout" data-value="Gunung">🌲 Gunung</button>
+    <button class="choice save-choice" data-key="hangout" data-value="Cafe">☕ Cafe</button>
+    <button class="choice save-choice" data-key="hangout" data-value="Main game bareng">🎮 Main game bareng</button>
+    <button class="choice save-choice" data-key="hangout" data-value="Cari makan">🍜 Cari makan</button>
+    <button class="choice save-choice" data-key="hangout" data-value="Nonton film">🎬 Nonton film</button>
+    <button class="choice other-btn" data-target="other-place">✍️ Lainnya...</button>
+  </div><div id="other-place" class="other"><p>Kalau bukan itu, kamu pengennya ke mana atau ngapain?</p><input data-key="hangout_other" placeholder="Tulis di sini..."><button class="small save-next">Simpan</button></div></div></section>
+
+  <section class="scene" data-scene="13"><div class="card"><div class="eyebrow">12 · Masih bertahan</div><h2>Aku seneng sih kalau kamu masih di sini.</h2><p>Berarti belum bosan baca tulisan ini. 😂</p><button class="primary next">Lanjutkan</button></div></section>
+  <section class="scene" data-scene="14"><div class="card"><div class="eyebrow">13 · Hal kecil</div><h2>Apa hal kecil yang bisa bikin hari kamu jadi lebih baik?</h2><textarea data-key="little_thing" placeholder="Ceritain sedikit..."></textarea><button class="primary save-next">Kirim Jawaban</button></div></section>
+
+  <section class="scene" data-scene="15"><div class="card"><div class="eyebrow">14 · Belajar bareng</div><h2>Kalau suatu hari kita keluar buat belajar bareng, kamu mau nggak?</h2><div class="choices column">
+    <button class="choice save-choice" data-key="study_together" data-value="Iya, mau.">😊 Iya, mau.</button>
+    <button class="choice save-choice" data-key="study_together" data-value="Nggak dulu.">🙃 Nggak dulu.</button>
+    <button class="choice other-btn" data-target="other-study">✍️ Jawaban lain...</button>
+  </div><div id="other-study" class="other"><input data-key="study_together_other" placeholder="Tulis jawaban lain..."><button class="small save-next">Simpan</button></div></div></section>
+
+  <section class="scene" data-scene="16"><div class="card"><div class="eyebrow">15 · Kesempatan bertanya</div><h2>Kalau kamu boleh nanya satu hal ke aku, kamu mau nanya apa?</h2><textarea data-key="question_for_me" placeholder="Tanya apa aja..."></textarea><button class="primary save-next">Kirim</button></div></section>
+
+  <section class="scene" data-scene="17"><div class="card"><div class="eyebrow">16 · Pertanyaan terakhir</div><h2>Boleh nggak aku kenal kamu lebih lama?</h2><div class="choices column">
+    <button class="choice save-choice" data-key="know_longer" data-value="Boleh.">🤍 Boleh.</button>
+    <button class="choice save-choice" data-key="know_longer" data-value="Kita lihat nanti.">😊 Kita lihat nanti.</button>
+    <button class="choice save-choice" data-key="know_longer" data-value="Pelan-pelan aja ya.">😅 Pelan-pelan aja ya.</button>
+    <button class="choice other-btn" data-target="other-final">✍️ Jawaban lain...</button>
+  </div><div id="other-final" class="other"><input data-key="know_longer_other" placeholder="Tulis jawaban lain..."><button class="small save-next">Simpan</button></div></div></section>
+
+  <section class="scene" data-scene="18"><div class="card"><div class="eyebrow">17 · Terima kasih</div><h2>Makasih ya. 🌷</h2><p>Jujur, aku nggak nyangka bakal bikin website sekecil ini buat seseorang.</p><p>Semoga kamu senyum sedikit waktu baca semuanya.</p><button id="finishBtn" class="primary">Selesai 🌷</button></div></section>
+
+  <section class="scene blank-scene" data-scene="19"><div class="blank"><div id="twist" class="twist">Eh bentar...</div><button id="twistBtn" class="primary hidden">Lanjutkan</button></div></section>
+  <section class="scene" data-scene="20"><div class="card"><div class="eyebrow">18 · Sebelum benar-benar berakhir</div><h2>Oiya...</h2><p>Sebelum benar-benar berakhir.</p><p>Aku mau nyampaikan sedikit nih.</p><button class="primary next">Lanjutkan</button></div></section>
+
+  <section class="scene" data-scene="21"><div class="card dramatic"><div class="eyebrow">19 · Sedikit kejujuran</div><p>Aku cuma mau bilang...</p><h2>Menurutku kamu lucu, dan always be fun.</h2><p>Entah kenapa, ngobrol sama kamu rasanya menyenangkan.</p><p>Terus...</p><p class="pause-text">Ada satu kalimat yang dari tadi pengen aku bilang.</p><button class="primary next">Lanjutkan</button></div></section>
+
+  <section class="scene" data-scene="22"><div class="card confession"><div class="eyebrow">20 · Confession</div><h2>Aku mau bilang kalau aku suka kamu.</h2><p class="pause-text">Tapi...</p><h2>jangan ya dek ya wkwkwk. 😭</h2><p>Bukan karena aku bercanda, tapi karena aku nggak mau setelah kalimat ini kita malah jadi asing.</p><p>Jadi anggap aja ini cuma kejujuran kecil yang aku titipin di halaman terakhir website ini.</p><button class="primary next">Lanjutkan</button></div></section>
+
+  <section class="scene final-scene" data-scene="23"><div class="stars"></div><div class="final-card">
+    <div class="heart-big">♥</div>
+    <h1 class="type-final">Aku sayang sama kamu.</h1>
+    <p class="delayed d1">Yang paling penting...</p>
+    <p class="delayed d2">Jaga diri baik-baik ya.<br>Semangat kuliahnya juga. :)</p>
+    <p class="delayed d3">Semoga hari-hari kamu selalu baik, atau setidaknya selalu ada alasan buat tersenyum.</p>
+    <p class="delayed d4">Satu hal lagi.</p>
+    <p class="delayed d5">Aku izin nitip satu pesan buat kamu, Biya.</p>
+    <div class="multiverse delayed d6">
+      <p><strong>Aku sayang sama kamu.</strong></p>
+      <p>Kalau ternyata itu hal yang mustahil di semesta ini, semoga di salah satu multiverse lain ada versi Biya yang bisa mencintai versi aku juga.</p>
+      <p>Entah lewat mimpi ataupun hal lainnya.</p>
+      <p>Hehe... aku percaya itu.</p>
+    </div>
+    <p class="delayed d7">Maaf ya kalau ini terdengar agak freak. 😭</p>
+    <p class="delayed d8">Terima kasih udah baca semuanya sampai akhir.</p>
+    <h2 class="delayed d9">Salam kenal. 🌷</h2>
+  </div></section>
+</main>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
